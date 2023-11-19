@@ -1,8 +1,19 @@
-import React from 'react'
 
 function Link() {
+
+    function clickHandler(params) {
+
+    }
+
     return (
-        <div>Link</div>
+        <>
+            <div>Link</div>
+            <a
+                href="http://"
+                onClick={clickHandler}
+            ></a>
+        </>
+
     )
 }
 

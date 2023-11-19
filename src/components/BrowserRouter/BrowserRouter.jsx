@@ -1,9 +1,22 @@
-import { useState, Context } from 'react'
+import { useState, createContext, useEffect } from 'react'
 
-function BrowserRouter() {
+function BrowserRouter({ children }) {
+
+    const [urlState, setUrlState] = useState("")
+
+    const BrowserRouter = createContext()
+
     return (
-        <div>BrowserRouter</div>
+        <>
+            <BrowserRouter.Provider value={urlState}>
+
+                {children}
+                <div>BrowserRouter</div>
+
+            </BrowserRouter.Provider>
+        </>
     )
 }
 
 export default BrowserRouter
+export { BrowserRouter }
