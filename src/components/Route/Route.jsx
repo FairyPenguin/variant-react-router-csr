@@ -1,9 +1,23 @@
 import { useContext } from "react"
-import BrowserRouter from "../BrowserRouter/BrowserRouter"
+import { BrowserContext } from "../BrowserRouter/BrowserRouter"
 
-function Route() {
+function Route({ children, path }) {
+
+    const { urlState } = useContext(BrowserContext)
+
+    console.log(urlState, path)
+
     return (
-        <div>Route</div>
+        <>
+            {/* <div>Route</div> */}
+            {path === urlState.pathname ?
+                <section> {children} </section>
+
+
+                : "-"}
+
+        </>
+
     )
 }
 

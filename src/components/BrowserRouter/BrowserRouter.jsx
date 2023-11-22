@@ -1,22 +1,23 @@
 import { useState, createContext, useEffect } from 'react'
 
+const BrowserContext = createContext()
+
 function BrowserRouter({ children }) {
+    const [urlState, setUrlState] = useState(new URL(window.location.href))
 
-    const [urlState, setUrlState] = useState("")
-
-    const BrowserRouter = createContext()
-
+    console.log(urlState)
     return (
         <>
-            <BrowserRouter.Provider value={urlState}>
-
+            <BrowserContext.Provider
+                value={{ urlState, setUrlState }}>
+                <div>BrowserContext</div>
                 {children}
-                <div>BrowserRouter</div>
 
-            </BrowserRouter.Provider>
+
+            </BrowserContext.Provider>
         </>
     )
 }
 
 export default BrowserRouter
-export { BrowserRouter }
+export { BrowserContext }
