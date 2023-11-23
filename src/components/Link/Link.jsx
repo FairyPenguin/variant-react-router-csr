@@ -7,6 +7,7 @@ function Link({ children, to }) {
     const { setUrlState } = useContext(BrowserContext)
 
     function clickHandler() {
+        window.history.pushState({}, "", to)
         setUrlState(new URL(`${window.location.origin}${to}`))
 
     }
@@ -16,7 +17,6 @@ function Link({ children, to }) {
             <a
                 onClick={clickHandler}
             >
-                <p>Link Component</p>
 
                 {children}
             </a>

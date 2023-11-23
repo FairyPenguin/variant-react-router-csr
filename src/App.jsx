@@ -17,7 +17,6 @@ function App() {
       <h1>App Home</h1>
 
       <BrowserRouter>
-        <Link to="/1">HOME</Link>
 
         <Navbar />
 
