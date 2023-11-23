@@ -5,7 +5,7 @@ function Route({ children, path }) {
 
     const { urlState } = useContext(BrowserContext)
 
-    console.log(urlState, path)
+    // console.log(urlState, path)
 
     return (
         <>

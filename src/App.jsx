@@ -2,11 +2,12 @@
 // import viteLogo from '/vite.svg'
 import './App.css'
 
-import { BrowserRouter, Route, Link } from "../src/components/index"
+import { BrowserRouter, Route, Navbar } from "../src/components/index"
 // import { Blog, List, About } from "../src/Pages/index"
 import About from "./About"
 import Blog from "./Blog"
 import List from "./List"
+import Link from '../src/components/Link/Link'
 
 function App() {
 
@@ -16,18 +17,24 @@ function App() {
       <h1>App Home</h1>
 
       <BrowserRouter>
+        <Link to="/1">HOME</Link>
+
+        <Navbar />
 
         <Route path="/about">
           <About />
-          <h1>aaa</h1>
+          <h2>about</h2>
+          <a href="/2">Go to route 2...</a>
         </Route>
 
         <Route path="/list">
           <List />
+          <h2>List</h2>
         </Route>
 
         <Route path="/blog">
           <Blog />
+          <h2>Blog</h2>
         </Route>
 
       </BrowserRouter>

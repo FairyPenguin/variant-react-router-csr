@@ -1,18 +1,28 @@
+import { BrowserContext } from "../BrowserRouter/BrowserRouter"
+import { useContext } from "react"
 
-function Link() {
 
-    function clickHandler(params) {
+function Link({ children, to }) {
+
+    const { setUrlState } = useContext(BrowserContext)
+
+    function clickHandler() {
+        setUrlState(new URL(`${window.location.origin}${to}`))
 
     }
 
     return (
         <>
-            <div>Link</div>
             <a
-                href="http://"
                 onClick={clickHandler}
-            ></a>
+            >
+                <p>Link Component</p>
+
+                {children}
+            </a>
         </>
+
+
 
     )
 }
